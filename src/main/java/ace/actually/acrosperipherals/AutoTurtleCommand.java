@@ -37,7 +37,7 @@ public class AutoTurtleCommand implements TurtleCommand {
             ServerComputerRegistry manager = ServerContext.get(serverLevel.getServer()).registry();
             ServerComputer computer = manager.getComputers().stream().filter(a->a.getID()==theId).findFirst().get();
             try {
-                //computer.getAPIEnvironment().getFileSystem().makeDir("/rom/startup/");
+                //an example of writing files to the filesystem on a turtleCommand
                 if(!computer.getAPIEnvironment().getFileSystem().exists("/startup/go.lua"))
                 {
 

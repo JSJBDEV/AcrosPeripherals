@@ -28,6 +28,9 @@ public class BootingPeripheral implements IPeripheral {
     public void attach(IComputerAccess computer) {
         IPeripheral.super.attach(computer);
         System.out.println(turtle.getLevel());
+
+        //we can technically do all the AutoTurtleCommand stuff directly here, but using a TurtleCommand means it
+        //runs on the Main thread only
         turtle.executeCommand(new AutoTurtleCommand(computer.getID()));
     }
 

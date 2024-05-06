@@ -23,6 +23,8 @@ public class AcrosPeripherals implements ModInitializer {
     public void onInitialize() {
         registerBlocks();
         registerItems();
+
+        //We do this to force the static initializer
         TurtleUpgradeSerialiser<BootingTurtleUpgrade> bootingTurtleUpgradeSerialiser = ModTurtleUpgradeSerialisers.BOOTING_TURTLE_UPGRADE_SERIALISER;
     }
 
@@ -38,7 +40,12 @@ public class AcrosPeripherals implements ModInitializer {
     }
 
 
-
+    /**
+     * This Class is derived from Plethora
+     * To register turtle upgrades you need to do something like this, implement an IPeripheral, and extend an AbstractTurtleUpgrade
+     * see BootingPeripheral and BootingTurtleUpgrade
+     * you also need to make data/YOUR MOD ID/computercraft/turtle_upgrades/YOUR UPGRADE.json - check it out
+     */
     public static final class ModTurtleUpgradeSerialisers {
         private static <T extends TurtleUpgradeSerialiser<?>> T register(ResourceLocation name, T serialiser) {
             @SuppressWarnings("unchecked")
