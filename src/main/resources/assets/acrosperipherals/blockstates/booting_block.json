@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "acrosperipherals:block/booting_block"
+    }
+  }
+}
